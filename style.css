@@ -18,6 +18,7 @@ body {
 nav {
     height: 80px;
     display: flex;
+    position: relative;
 }
 
 .nav__hamburger {
@@ -27,6 +28,9 @@ nav {
     color: rgb(10, 56, 33);
     font-size: 24px;
     padding: 8px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
 }
 
 .nav__hamburger .fa-bars {
