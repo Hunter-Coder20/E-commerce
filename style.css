@@ -20,6 +20,23 @@ nav {
     display: flex;
 }
 
+.nav__hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: rgb(10, 56, 33);
+    font-size: 24px;
+    padding: 8px;
+}
+
+.nav__hamburger .fa-bars {
+    color: inherit;
+}
+
+.nav__hamburger:hover {
+    color: rgb(3, 226, 114);
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -91,6 +108,7 @@ ul {
     text-align: center;
     border: none;
     color: rgb(10, 56, 33);
+    display: none;
 }
 
 .menu__backdrop {
@@ -103,11 +121,20 @@ ul {
     z-index: 100;
     justify-content: center;
     align-items: center;
+    transition: all 300ms ease;
     display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .menu--open .menu__backdrop {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
 }
 
 .menu__links {
@@ -292,6 +319,7 @@ HIGHLIGHTS
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 /*
@@ -299,6 +327,10 @@ HIGHLIGHTS
 FEATURES
 
 */
+
+#features .section__title {
+    margin-bottom: 16px;
+}
 
 #features {
     background-color: rgb(112, 163, 100);
@@ -329,7 +361,7 @@ FEATURES
 
 .book__img--wrapper {
     aspect-ratio: 2/3;
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     width: 100%;
     margin: 0 0 8px;
@@ -405,4 +437,52 @@ footer {
 
 .footer__link {
     padding: 0 8px;
+}
+
+/*
+
+Small phones, Tablets, Large Smartphones
+
+*/
+
+@media (max-width: 550px) {
+    .btn__menu {
+        display: block;
+    }
+}
+
+/*
+
+Small Phones, large smartphones
+
+*/
+
+@media (max-width: 768px) {
+    .nav__hamburger {
+        display: block;
+    }
+
+    .header__description {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .book {
+        width: 100%;
+    }
+
+    .nav__links {
+        display: none;
+    }
 }
